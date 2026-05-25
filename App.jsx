@@ -382,7 +382,7 @@ function GeneratorPage({ onPreview }) {
   );
 }
 
-// ─── UPPLÅSNINGS-SIDA ─────────────────────────────────────────────────────────
+// ─── UPPLÅSNINGS-SIDA ────────────────────────────────────────────────_________
 function UnlockPage({ params, onBack }) {
   const [input, setInput] = useState("");
   const [status, setStatus] = useState(null); 
