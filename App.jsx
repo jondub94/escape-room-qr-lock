@@ -283,7 +283,6 @@ function GeneratorPage({ onPreview }) {
     }
   };
 
-  // Filtrerar de 100 emojislåsen baserat på användarens söktext eller kategori
   const filteredLocks = LOCK_STYLES.filter(
     (l) =>
       l.label.toLowerCase().includes(search.toLowerCase()) ||
@@ -573,12 +572,12 @@ export default function App() {
     }
   }, []);
 
-  // Om någon skannar QR-koden landar de här automatiskt tack vare parametrarna i URL:en
+  // Om spelaren har skannat koden och landat på en giltig URL-nyckel
   if (urlParams) {
     return <UnlockPage params={urlParams} />;
   }
 
-  // Om spelledaren testar eller förhandsgranskar från generatorn
+  // Om spelledaren valt att klicka på förhandsgranskning inifrån generatorn
   if (previewParams) {
     return (
       <UnlockPage 
@@ -588,6 +587,6 @@ export default function App() {
     );
   }
 
-  // Standardsida: Visa byggverktyget
+  // Annars renderar vi skaparen direkt
   return <GeneratorPage onPreview={(params) => setPreviewParams(params)} />;
 }
